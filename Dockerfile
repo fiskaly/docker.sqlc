@@ -45,7 +45,7 @@ RUN apk update \
 
 RUN CGO_ENABLED=0 \
     go install github.com/kyleconroy/sqlc/cmd/sqlc@v1.17.0 \
- && /go/bin/sqlc -version
+ && /go/bin/sqlc version
 
 FROM scratch \
   AS image
@@ -57,4 +57,4 @@ COPY --from=build /go/bin/sqlc /sqlc
 
 USER appuser:appuser
 ENTRYPOINT ["/sqlc"]
-CMD ["-help"]
+CMD ["help"]
