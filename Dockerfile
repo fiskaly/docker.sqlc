@@ -44,7 +44,7 @@ RUN apk update \
  && update-ca-certificates
 
 RUN CGO_ENABLED=0 GOOS=linux \
-    go install github.com/kyleconroy/sqlc/cmd/sqlc@v1.17.0 \
+    go install github.com/kyleconroy/sqlc/cmd/sqlc@v1.18.0 \
  && /go/bin/sqlc version
 
 FROM scratch \
