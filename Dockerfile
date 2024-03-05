@@ -25,7 +25,7 @@
 #   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #   SOFTWARE.
 
-FROM golang:1.19-alpine \
+FROM golang:1.21-alpine \
   AS build
 
 ENV USER=appuser
