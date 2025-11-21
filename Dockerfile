@@ -25,7 +25,7 @@
 #   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #   SOFTWARE.
 
-FROM golang:1.21-alpine \
+FROM golang:1.25-alpine \
   AS build
 
 ENV USER=appuser
@@ -44,7 +44,7 @@ RUN apk update \
  && update-ca-certificates
 
 RUN CGO_ENABLED=0 GOOS=linux \
-    go install github.com/sqlc-dev/sqlc/cmd/sqlc@v1.25.0 \
+    go install github.com/sqlc-dev/sqlc/cmd/sqlc@v1.30.0 \
  && /go/bin/sqlc version
 
 FROM scratch \
